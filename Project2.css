@@ -1,0 +1,24 @@
+#container{
+	background-color: white;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right:auto;
+	width:960px;
+	font-size: 0px;
+}
+
+#container>div{
+	border:1px solid white;
+	position: relative;
+	text-align: center;
+	background-color: #d0d0d0;
+	display:inline-block;
+	border-radius: 100%;
+}
+
+#button{
+	height:100%;
+	width:100%;
+	background-color:white;
+	text-align: center;	
+}
