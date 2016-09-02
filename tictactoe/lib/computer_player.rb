@@ -11,9 +11,7 @@ class ComputerPlayer
     @board = board
   end
   
-  
   def get_move
-    
     @board.rows.each_with_index do |row, row_idx|
       marks = row.compact
       if marks.length == 2 && marks.uniq.length == 1
@@ -51,7 +49,6 @@ class ComputerPlayer
         return [row_idx, column_idx]
       end
     end
-    
   end
   
 end
