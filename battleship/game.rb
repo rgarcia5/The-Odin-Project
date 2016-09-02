@@ -40,7 +40,6 @@ class BattleshipGame
   def display_status
     puts "Number of ships remaining: #{count}"
     puts "Empty spots available: #{empty_spots_available}"
-    
   end
   
   def play
@@ -53,7 +52,6 @@ class BattleshipGame
         break
       end    
     end
-    
   end
   
 end
