@@ -1,12 +1,8 @@
-class Player
-  def initialize(name)
-    @name = name
-  end
-
+class HumanPlayer
+  
   def get_play
-    x_input = gets.chomp.to_i
-    y_input = gets.chomp.to_i
-    [x_input, y_input]
+    move = gets.chomp
+    move = move.split("").map(&:to_i)
   end
-
+  
 end
