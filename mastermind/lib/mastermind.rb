@@ -2,8 +2,6 @@ class Code
   
   attr_reader :pegs
   
-
-  
   PEGS = 
     { 
       :Red => "R", :Green => "G", :Blue => "B", :Yellow => "Y",
@@ -11,17 +9,13 @@ class Code
     }
   
   def self.parse(input)
-    
     input.split("").each do |color|
       unless PEGS.values.include?(color.upcase)  
         raise "Not a valid input."
       end
     end
-    
     colors = input.split("")
-    
     Code.new(colors)
-    
   end
   
   def initialize(pegs)
@@ -34,7 +28,6 @@ class Code
       code << PEGS.values.shuffle.first
     end
     Code.new(code)    
-    
   end
   
   def[](idx)
@@ -48,9 +41,7 @@ class Code
       count += 1 if self[idx] == code[idx]
       idx += 1
     end
-    
     count
-    
   end
   
   def near_matches(code)
@@ -62,9 +53,7 @@ class Code
       end
       idx += 1
     end
-    
     result.uniq.length
-  
   end
   
   def ==(code)
@@ -76,14 +65,13 @@ class Code
   
 end
 
-
 class Game
+  
   attr_reader :secret_code
   
   def initialize(code = Code.random)
     @secret_code = code
     @number_of_turns = 0
-    
   end
   
   def get_guess
@@ -98,10 +86,8 @@ class Game
   def display_matches(code)
     exact_matches = code.exact_matches(secret_code)
     near_matches = code.near_matches(secret_code)
-   
-   puts "#{exact_matches} exact matches"
-   puts "#{near_matches} near matches"
-    
+    puts "#{exact_matches} exact matches"
+    puts "#{near_matches} near matches"
   end
   
   def win?(guess)
@@ -113,7 +99,6 @@ class Game
   end
   
   def play
-    
     loop do 
       guess = get_guess
       display_matches(guess)
@@ -124,10 +109,8 @@ class Game
         puts "You lost!"
         break
       end
-      
       @number_of_turns += 1
     end
-    
   end
   
 end
