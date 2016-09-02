@@ -22,8 +22,6 @@ class ComputerPlayer
     result
   end
   
-  
-  
   def guess(board)
     p board
     puts "Please guess a letter"
@@ -32,7 +30,6 @@ class ComputerPlayer
       word.each_char do |letter|
         letter_count[letter] += 1 unless board.include?(letter)
       end
-      
     end
     letter,count = letter_count.max_by { |letter,count| count }
     letter
@@ -46,7 +43,6 @@ class ComputerPlayer
     end
     
     if spots.length == 1
-    
       candidate_words.each do |word|
         count = 0
         word.each_char do |letter|
@@ -61,8 +57,6 @@ class ComputerPlayer
         candidate_words.delete(word) if word.include?(guess)
       end
     end 
-      
-  
     candidate_words
   end
   
@@ -75,9 +69,6 @@ class ComputerPlayer
     candidate_words
   end
   
-
-  
-
 end
 
 class HumanPlayer
@@ -107,11 +98,7 @@ class HumanPlayer
   def handle_response(guess, spot)
     puts "Not a valid input. Try again."
   end
-  
-  
-  
 end
-
 
 class Hangman
   
@@ -155,11 +142,8 @@ class Hangman
       p board
       take_turn
       break if win?
-      
-      
     end
   end
-  
   
 end
 
