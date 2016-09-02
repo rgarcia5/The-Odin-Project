@@ -1,4 +1,3 @@
-
 class HumanPlayer
   
   attr_accessor :name, :mark
@@ -8,7 +7,6 @@ class HumanPlayer
     @name = name
   end
 
-  
   def get_move
     puts "where"
     move = gets.chomp.split(",").map(&:to_i)
@@ -17,4 +15,5 @@ class HumanPlayer
   def display(board)
     print board.grid
   end
+  
 end
