@@ -1,10 +1,10 @@
 class Board
+  
   attr_reader :grid
 
   def initialize( grid = Array.new(3) { Array.new(3) } )
     @grid = grid
   end
-
     
   def [](row,col)
     @grid[row][col]
@@ -42,15 +42,10 @@ class Board
   
   def diagonals
     [ 
-      
       [ self[0,0], self[1,1], self[2,2] ] , 
-      
       [ self[0,2], self[1,1], self[2,0] ] 
-      
     ]
   end
-  
-
   
   def winner
     rows.any? do |row|
@@ -70,9 +65,7 @@ class Board
       if diagonal.all? { |mark| diagonal[0] == mark && mark != nil }
         return diagonal[0]
       end
-      
     end
-    
     nil
   end
   
@@ -88,8 +81,6 @@ class Board
         spot != nil
       end
     end
-    
   end
-
 
 end
