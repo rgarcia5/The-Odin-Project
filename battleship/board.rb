@@ -59,13 +59,10 @@ class Board
   end
 
   def place_random_ship
-
     until empty?(random_spot)
       pos = random_spot
     end
-
     self[*pos] = :s
-
   end
 
   def won?
